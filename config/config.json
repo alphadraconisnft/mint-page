@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0xd865f732c0f634A4F3748f734717EDC2E4Fb1038",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xd865f732c0f634A4F3748f734717EDC2E4Fb1038",
+  "NETWORK": {
+    "NAME": "Rinkeyby",
+    "SYMBOL": "ETH",
+    "ID": 4
+  },
+  "NFT_NAME": "Alpha Draconis",
+  "SYMBOL": "ALPHADRACONIS",
+  "MAX_SUPPLY": 8888,
+  "WEI_COST": 50000000000000000,
+  "DISPLAY_COST": 0.05,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/alpha-draconis-v4",
+  "SHOW_BACKGROUND": true
+}
