@@ -8,11 +8,11 @@ import "./ERC721A.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract AlphaDraconis is Ownable, ERC721A, ReentrancyGuard {
-    uint32 preSaleStartTime = 1642313556;
-    uint32 publicSaleStartTime = 1642399955;
+    uint32 preSaleStartTime = 1643378400;
+    uint32 publicSaleStartTime = 1643464800;
     uint256 public maxPerAddressDuringMint;
-    uint256 whitelistPrice = 35000000000000000;
-    uint256 publicPrice = 50000000000000000;
+    uint256 public whitelistPrice = 35000000000000000;
+    uint256 public publicPrice = 50000000000000000;
     uint256 MAX_MINT = 5;
     uint32 collectionSize = 8888;
     mapping(address => uint256) public freelist;
@@ -106,7 +106,7 @@ contract AlphaDraconis is Ownable, ERC721A, ReentrancyGuard {
     bool private _isRevealed = false;
 
  // // metadata URI
-  string private _baseTokenURI;
+  string private _baseTokenURI = "https://alphadraconis.mypinata.cloud/ipfs/QmaSKR8VefQfKjdGs3fGAvbAdp4X63WJvNDrmiK2tqPMv9/";
 
   function _baseURI() internal view virtual override returns (string memory) {
     return _baseTokenURI;
@@ -117,6 +117,10 @@ contract AlphaDraconis is Ownable, ERC721A, ReentrancyGuard {
   }
     function revealCollection() public onlyOwner{
       _isRevealed = true;
+    }
+
+    function hideCollection() public onlyOwner{
+      _isRevealed = false;
     }
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory){
@@ -130,7 +134,6 @@ contract AlphaDraconis is Ownable, ERC721A, ReentrancyGuard {
 
 
 // Address Functions 
-
 
   function setWhitelist(address[] memory addresses, uint256[] memory numSlots)
     external
@@ -178,5 +181,14 @@ contract AlphaDraconis is Ownable, ERC721A, ReentrancyGuard {
       function changeMaxMint(uint32 _newMax) public onlyOwner {
         MAX_MINT = _newMax;
     }
+
+      function changePresalePrice(uint256  _newPrice) public onlyOwner {
+        whitelistPrice = _newPrice;
+    }
+
+      function changePublicPrice(uint256  _newPrice) public onlyOwner {
+        publicPrice = _newPrice;
+    }
+
     
 }
